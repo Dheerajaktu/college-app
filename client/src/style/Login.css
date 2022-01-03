@@ -1,0 +1,12 @@
+.leftContainer{
+    /* width: 20%; */
+    border: 1px solid red;
+}
+.rightContainer{
+    /* width: 80%; */
+    border: 1px solid black;
+    background-image: url('../static/login-rightContainer.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
