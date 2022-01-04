@@ -12,7 +12,7 @@ export default class Login extends Component {
                         <div className="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                             <div className="card px-0 pt-4 pb-0 mt-3 mb-3">
                                 <h2><strong>Log in to Portal</strong></h2>
-                                <p>Are you new? <a href="/signup">Signup Here</a></p>
+                                <p>Are you new? <a href="/signup">Sign up Here</a></p>
                                 <div className="row">
                                     <div className="col-md-12 mx-0">
                                         <form id="msform">
@@ -37,7 +37,7 @@ export default class Login extends Component {
                                                     <div className="col-md-4 mx-0">
                                                     </div>
                                                     <div className="col-md-4 mx-0">
-                                                        <p>Need Help? <a href="#">Click Here</a></p>
+                                                        <p>Need Help? <a href="/home">Click Here</a></p>
                                                     </div>
                                                 </div>
                                                 {/* <p>Forgot Password? <a href="#">Click Here</a></p> */}

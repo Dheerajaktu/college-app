@@ -63,7 +63,7 @@
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: 1px
 }
 
@@ -86,8 +86,8 @@
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px
+    padding: 8px 3px;
+    margin: 8px 3px
 }
 
 #msform .action-button:hover,
@@ -234,4 +234,7 @@ select.list-dt:focus {
 .fit-image {
     width: 100%;
     object-fit: cover
+}
+p{
+    font-size: 12px;
 }
