@@ -1,34 +1,47 @@
 const createError = require('http-errors');
 const express = require('express');
+const dotenv = require('dotenv');
 const path = require('path');
+const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
+
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+const URI = `mongodb+srv://dheeraj:Db%40123@cluster0.ewa7h.mongodb.net/restfull-api-demo?retryWrites=true&w=majority`;
+console.log('==env==', URI);
+/* DB Connection */
+mongoose.connect(URI, {
+  useNewUrlParser: true,
+  // useUnifiedTopology: true,
+  // useCreateIndex: true,
+  // useFindAndModify: false
+}).then(() => {
+  console.log('DB Connection Eshtablished');
+}).catch((e => {
+  console.log('Erro while Connecting DB', e);
+}))
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.resolve(__dirname, 'client/build')));
+// app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-// Route
-app.get('*', (req, res) => {res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'))});
 
+
+app.use('/', indexRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
