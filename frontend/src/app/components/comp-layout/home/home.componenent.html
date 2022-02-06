@@ -1,5 +1,4 @@
 <div>
-
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
@@ -7,7 +6,7 @@
                 <img src="assets/img/logo.png" alt="" />
                 <span class="d-none d-lg-block">Hello World!</span>
             </a>
-            <i class="bi bi-list toggle-sidebar-btn" onClick={this.toggleBtn}></i>
+            <i class="bi bi-list toggle-sidebar-btn" id="toggleBtnID" (click)="onClickToggleBtn()"></i>
         </div>
 
         <div class="search-bar">
