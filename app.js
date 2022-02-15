@@ -24,11 +24,12 @@ mongoose.connect(URI, {
   console.log('Erro while Connecting DB', e);
 }))
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.resolve(__dirname, 'client/build')));
+// app.use(express.static(path.resolve(__dirname, '/dist/')));
 
 
 
@@ -48,7 +49,8 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
+  res.json({ message: 'Error Here' })
 });
 
 module.exports = app;

@@ -1,54 +1,61 @@
 <div class="container" style="width: 400px;">
-    <form>
+    <form #signupForm="ngForm" (ngSubmit)="saveUser(signupForm.value)">
         <div class="text-center mb-2">
             <p style="font-size: 30px;">Sign up Here</p>
             <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-facebook-f">f</i>
+                <!-- <i class="fab fa-facebook-f">f</i> -->
             </button>
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-google">G</i>
+                <!-- <i class="fab fa-google">G</i> -->
             </button>
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-twitter">t</i>
+                <!-- <i class="fab fa-twitter">t</i> -->
             </button>
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-github">Gh</i>
+                <!-- <i class="fab fa-github">Gh</i> -->
             </button>
         </div>
 
         <p class="text-center">or:</p>
 
         <div class="form-outline mb-3">
-            <input type="text" id="registerName" class="form-control" placeholder="Firstaname" />
+            <input type="text" id="signupFirstname" name="signupFirstname" class="form-control" placeholder="Firstaname"
+                required ngModel />
         </div>
 
         <div class="form-outline mb-3">
-            <input type="text" id="registerUsername" class="form-control" placeholder="Lastaname" />
+            <input type="text" id="signupLastname" name="signupLastname" class="form-control" placeholder="Lastaname"
+                required ngModel />
         </div>
 
         <div class="form-outline mb-3">
-            <input type="email" id="registerEmail" class="form-control" placeholder="Email" />
+            <input type="email" id="signupEmail" name="signupEmail" class="form-control" placeholder="Email" required
+                ngModel />
         </div>
 
         <div class="form-outline mb-3">
-            <input type="text" id="registerPassword" class="form-control" placeholder="Mobile No." />
+            <input type="text" id="signupMobileNo" name="signupMobileNo" class="form-control" placeholder="Mobile No."
+                required ngModel />
         </div>
 
         <div class="form-outline mb-3">
-            <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Password" />
+            <input type="password" id="signupPassword" name="signupPassword" class="form-control" placeholder="Password"
+                required ngModel />
         </div>
 
         <div class="form-outline mb-3">
-            <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Confirm Password" />
+            <input type="password" id="signupRepeatPassword" name="signupRepeatPassword" class="form-control"
+                placeholder="Confirm Password" ngModel />
         </div>
 
-
-
-        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+        <button class="btn btn-primary btn-block mb-4" id="signupButton">Sign
+            up</button>
         <p style="font-size: 12px;">Already registerd?<a href="/"> Login</a></p>
-
     </form>
+    <p id="warningOnSignup" style="font-size: 20px;color: red;display: none;"><b>Error While Saving Data</b></p>
 </div>
+
+<!-- (click)="onClickSignupBtn()" -->

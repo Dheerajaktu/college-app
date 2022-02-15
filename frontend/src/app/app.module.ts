@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { Home } from './components/comp-layout/home/home.componenent';
 import { Login } from './components/login/login.component';
 import { Signup } from './components/register/signup.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './service/http.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,9 @@ import { Signup } from './components/register/signup.component';
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
