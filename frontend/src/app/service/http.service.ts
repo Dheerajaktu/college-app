@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -9,17 +10,17 @@ import { Observable } from 'rxjs';
 export class HttpService {
     private APIRegisterUser: string = '/api/signup';
 
-    constructor(private http: HttpClient) {
-    }
+    constructor(private http: HttpClient, private router: Router) { }
 
 
     /*--------creating user-------*/
     createUser(registerObj: any) {
-        console.log('====create user called===', registerObj);
         this.http.post(this.APIRegisterUser, registerObj).subscribe(res => {
-            console.log('===post API res===', res);
+            if (res) {
+                this.router.navigate(['/']);
+            }
         }, (error) => {
-            console.log('===post API er===', error);
+            this.router.navigate(['/register']);
         })
 
     }

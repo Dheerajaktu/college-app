@@ -68,21 +68,14 @@ export class Signup {
 
     getUserData() {
         this.api.getUser().subscribe((res) => {
-            console.log('--hello user--', res);
-            if (res) {
-                this.router.navigate(['/']);
-            } else {
-                this.errorWhileSavingUser();
-            }
-
+            console.log('--get method--', res);
         }, (e) => {
-            console.log('---hello error---', e);
-            this.errorWhileSavingUser();
+            console.log('-----get methid ---', e);
         })
     }
 
-
-
-
 }
+
+
+
 

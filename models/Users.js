@@ -23,6 +23,11 @@ const userSchema = new mongoose.Schema({
         requied: true,
         max: 20
     },
+    mobileNo: {
+        type: String,
+        requied: true,
+        max: 20
+    },
     profilePicture: {
         type: String,
         required: false
